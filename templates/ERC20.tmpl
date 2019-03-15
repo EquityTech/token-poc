@@ -1,0 +1,14 @@
+pragma solidity ^0.5.0;
+
+import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+
+contract {{ .Name }} is ERC20 {
+  string public name = "{{ .Name }}";
+  string public symbol = "{{ .Symbol }}";
+  uint8 public decimals = {{ .Decimals }};
+  uint public INITIAL_SUPPLY = {{ .InitialSupply }};
+
+  constructor() public {
+    _mint(msg.sender, INITIAL_SUPPLY);
+    }
+}
